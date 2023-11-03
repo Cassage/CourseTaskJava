@@ -30,7 +30,8 @@ public class LastResultsStorage {
             try  {
                 reader = new BufferedReader(new FileReader(file));
             }  catch (IOException noFileErr) {
-                new PrintWriter("history.txt", StandardCharsets.UTF_8);
+                PrintWriter printWriter = new PrintWriter("history.txt", StandardCharsets.UTF_8);
+                printWriter.close();
                 reader = new BufferedReader(new FileReader(file));
             }
             String currentLine;
